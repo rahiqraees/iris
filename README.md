@@ -36,21 +36,50 @@ petal length, and petal width in centimeters) and the species classification.
 ## Report
 
 The final report can be found
-[here](https://github.com/YOUR_USERNAME/iris-classifier/blob/main/notebooks/iris_species_classifier_report.html).
+[here](https://github.com/rahiqraees/iris/blob/main/notebooks/iris_species_classifier_report.ipynb).
 
 ## Usage
 
-First time running the project,
-run the following from the root of this repository:
+### Using Docker (Recommended)
 
-``` bash
+To run this analysis using Docker:
+
+1. Install and run [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+2. Clone this repository and navigate to it:
+   ```bash
+   git clone https://github.com/rahiqraees/iris.git
+   cd iris
+   ```
+
+3. Run the following command from the root of this repository:
+   ```bash
+   docker-compose up
+   ```
+
+4. Open the URL that appears in the terminal (e.g., `http://127.0.0.1:8888/lab?token=...`) in your browser.
+
+5. Navigate to `work/notebooks/iris_species_classifier_report.ipynb` and select the **Python (iris_classifier)** kernel.
+
+6. Under the "Kernel" menu click "Restart Kernel and Run All Cells...".
+
+7. To stop the container, press `Ctrl+C` in the terminal, then run:
+   ```bash
+   docker-compose down
+   ```
+
+### Without Docker
+
+First time running the project, run the following from the root of this repository:
+
+```bash
 conda-lock install --name iris_classifier conda-lock.yml
 ```
 
-To run the analysis,
-run the following from the root of this repository:
+To run the analysis, run the following from the root of this repository:
 
-``` bash
+```bash
+conda activate iris_classifier
 jupyter lab 
 ```
 
@@ -62,10 +91,9 @@ Next, under the "Kernel" menu click "Restart Kernel and Run All Cells...".
 
 ## Dependencies
 
+- [Docker](https://www.docker.com/) (recommended), or
 - `conda` (version 23.9.0 or higher)
 - `conda-lock` (version 2.5.7 or higher)
-- `jupyterlab` (version 4.0.0 or higher)
-- `nb_conda_kernels` (version 2.3.1 or higher)
 - Python and packages listed in [`environment.yml`](environment.yml)
 
 ## License
