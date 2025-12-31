@@ -1,0 +1,8 @@
+services:
+  iris-classifier-env:
+    image: rahiqraees/iris-classifier:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    platform: linux/amd64
